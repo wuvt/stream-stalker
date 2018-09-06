@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/bash
 
 OUT=stream-stalker.csv 
 ZZZ=60
