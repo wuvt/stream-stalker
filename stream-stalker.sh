@@ -1,7 +1,7 @@
 #!/bin/env bash
 
 OUT=stream-stalker.csv 
-ZZZ=5
+ZZZ=60
 URL="https://www.wuvt.vt.edu/playlists/latest_track"
 
 # Check if csv file already exists, and if not, create it
@@ -23,5 +23,6 @@ do
     LINE="${TIMESTAMP},${DJ},${ARTIST},${TITLE},${ALBUM},${LISTENERS}"
     echo $LINE
     echo $LINE >> $OUT
+    rclone copy stream-stalker.csv wuvt_team_drive:2018-2019/GM/
     sleep $ZZZ
 done
