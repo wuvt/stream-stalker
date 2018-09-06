@@ -13,7 +13,7 @@ fi
 # Start looping
 while true
 do
-    curl -s "${URL}" -o stream.tmp
+    curl -s "${URL}" -H "Accept: application/json" -o stream.tmp
     TIMESTAMP=$(date +"%Y/%m/%d %H:%M:%S")
     DJ=$(jq -r '.dj' stream.tmp)
     ARTIST=$(jq -r '.artist' stream.tmp)
