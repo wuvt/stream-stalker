@@ -20,7 +20,7 @@ do
     TITLE=$(jq -r '.title' stream.tmp)
     ALBUM=$(jq -r '.album' stream.tmp)
     LISTENERS=$(jq -r '.listeners' stream.tmp)
-    LINE="${TIMESTAMP},${DJ},${ARTIST},${TITLE},${ALBUM},${LISTENERS}"
+    LINE=$TIMESTAMP,\"$DJ\",\"$ARTIST\",\"$TITLE\",\"$ALBUM\",$LISTENERS
     echo $LINE
     echo $LINE >> $OUT
     rclone copy stream-stalker.csv wuvt_team_drive:2018-2019/GM/
